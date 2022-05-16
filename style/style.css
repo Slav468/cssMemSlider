@@ -1,0 +1,154 @@
+.wrapper {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.container {
+    padding: 2rem;
+    background-color: rgba(185, 174, 174, 0.7);
+    box-shadow: rgb(215, 230, 18) 0.3rem 0.2rem 1rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 31.25rem;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide {
+    display: none;
+}
+
+.active {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+.slide-prev,
+.slide-next {
+    cursor: pointer;
+    position: absolute;
+    width: 3%;
+    height: 10%;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    top: 45%;
+    transform: translate(0, -50%);
+    background-color: rgba(8, 3, 3, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-prev:hover,
+.slide-next:hover {
+    background-color: rgba(185, 174, 174, 0.7);
+}
+
+.slide-prev__img,
+.slide-next__img {
+    width: 70%;
+    height: 70%;
+    display: block;
+}
+
+.slide-prev__img path,
+.slide-next__img path {
+    fill: #fff;
+}
+
+.slide-prev:hover .slide-prev__img path,
+.slide-next:hover .slide-next__img path {
+    fill: rgba(8, 3, 3, 0.7);
+}
+
+.slide-prev {
+    left: 0;
+}
+
+.slide-next {
+    right: 0;
+}
+
+.slider-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    display: none;
+}
+
+.title_active {
+    display: block;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: rgba(185, 174, 174, 0.7);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s;
+}
+
+.dot:hover {
+    background-color: rgba(8, 3, 3, 0.7);
+}
+
+.dot_active {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: rgba(8, 3, 3, 0.7);
+    border-radius: 50%;
+    border: rgb(215, 230, 18) 0.15rem solid;
+    display: inline-block;
+    transition: background-color 0.6s;
+}
+
+@media (max-width: 425px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .slider-footer {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .title_active {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+    .slide-prev,
+    .slide-next {
+        display: none;
+    }
+}
